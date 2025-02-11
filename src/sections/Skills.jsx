@@ -68,7 +68,7 @@ const Skills = () => {
           <h4 className="text-left text-5xl font-extrabold lg:text-7xl">
             My ToolBox
           </h4>
-          <p className="w-60 pb-3 tracking-wide text-gray-600">
+          <p className="w-60 pb-3 tracking-wide text-gray-600 text-xl">
             Explore the tools and technologies I use to develop my projects
           </p>
           <div className="flex flex-wrap gap-4 relative">

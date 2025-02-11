@@ -1,12 +1,12 @@
 import { LuDot } from "react-icons/lu";
 import ArrowDownShort from "../ui/ArrowDownShort";
-import AvatarImg from "../../src/assets/avatarImg2.png";
+import AvatarImg from "../../public/avatarImg2.png";
 
 const Introduction = () => {
   return (
     <div className="ml-1 border-b border-gray-600 py-3 sm:mx-auto sm:max-w-[85rem] md:gap-3 md:pb-8">
       <div className="flex items-center justify-between gap-2 pb-5 md:gap-3">
-        <p className="text-2xl font-semibold text-gray-900 md:text-6xl">
+        <p className="font-extrabold text-gray-900 text-left text-5xl lg:text-7xl">
           Introduction
         </p>
         <div className="flex items-center gap-1 md:gap-3">
@@ -25,7 +25,7 @@ const Introduction = () => {
           A Full-stack Developer
         </h2>
         <div className="flex flex-col items-center justify-between md:flex-row md:gap-5">
-          <p className="text-wrap text-gray-600 md:text-[19px]">
+          <p className="text-wrap text-gray-600 text-lg">
             Hello 👋, I am Shreyansh Goel, a skilled Full Stack Developer with a
             passion for building efficient, scalable web applications. Alongside
             my development expertise, I am an avid competitive programming

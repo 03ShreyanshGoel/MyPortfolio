@@ -1,4 +1,4 @@
-import AboutImg from "../../src/assets/myBestImg.jpg";
+import AboutImg from "../../public/myBestImg.jpg";
 const AboutImage = () => {
   return (
     <div

@@ -1,4 +1,4 @@
-import imgLogo from "../../src/assets/logo.svg";
+import imgLogo from "../../public/logo.svg";
 
 const Logo = () => {
   const handleClick = () => {

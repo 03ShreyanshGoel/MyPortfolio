@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import AvatorImg from "../../src/assets/avatarImg.png";
+import AvatorImg from "../../public/avatarImg.png";
 
 const HelloMe = () => {
   const [showText, setShowText] = useState(false);

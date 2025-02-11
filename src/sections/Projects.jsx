@@ -31,7 +31,7 @@ const Projects = () => {
                       </h3>
                     </div>
                     <hr className="mt-4 border-t-2 border-gray-200/5" />
-                    <ul className="mt-4 flex flex-col gap-4">
+                    <ul className="mt-4 flex flex-col gap-2">
                       {project.projectPoints.map((point) => (
                         <li
                           key={point}
@@ -46,7 +46,7 @@ const Projects = () => {
                     {project.links.map((link, index) => (
                       <div
                         key={index}
-                        className="mt-8 flex flex-col gap-2 md:flex-row lg:gap-10"
+                        className="my-8 flex flex-col gap-4 md:flex-row lg:gap-10"
                       >
                         <button className="h-12 w-full grow cursor-pointer items-center justify-center gap-2 rounded-xl bg-gray-100 font-semibold tracking-wide text-gray-950 transition-colors duration-500 ease-in-out md:flex md:w-1/2 md:px-8">
                           <a
@@ -81,7 +81,7 @@ const Projects = () => {
                 {/* Image Section with Full Height & Aligned Bottom */}
                 <div className="h-full flex items-end">
                   <img
-                    src={`../../src/assets/${project.projectImg}`}
+                    src={`../../public/${project.projectImg}`}
                     alt={project.projectName}
                     className="w-full object-cover"
                   />
