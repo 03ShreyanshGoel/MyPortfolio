@@ -81,7 +81,7 @@ const Projects = () => {
                 {/* Image Section with Full Height & Aligned Bottom */}
                 <div className="h-full flex items-end">
                   <img
-                    src={`../../public/${project.projectImg}`}
+                    src={`/public/${project.projectImg}`}
                     alt={project.projectName}
                     className="w-full object-cover"
                   />
