@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Zain", "serif";
+  --font-accent: "Badeen Display", "serif";
+}
+
+body {
+  background-color: #f3f3f1;
+}
