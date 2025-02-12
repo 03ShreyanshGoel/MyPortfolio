@@ -3,14 +3,14 @@ import Title from "../ui/Title";
 
 const SkillsCat = () => {
   const greetings = [
+    "नमस्ते",
     "Hello",
     "Hola",
-    "Bonjour",
     "Hallo",
-    "Olá",
     "مرحبا",
     "안녕하세요",
-    "नमस्ते",
+    "Olá",
+    "Bonjour",
   ];
 
   return (
