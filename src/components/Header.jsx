@@ -77,8 +77,8 @@ const Header = ({ active }) => {
               className="h-6 w-6 cursor-pointer rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-950 md:h-9 md:w-9"
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = "/pdfs/Shreyansh_Goel_Resume.pdf";
-                link.download = "Shreyansh_Goel_Resume.pdf";
+                link.href = "/pdfs/Shreyansh Goel Resume.pdf";
+                link.download = "Shreyansh Goel Resume.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
