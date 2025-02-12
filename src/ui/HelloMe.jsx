@@ -1,47 +1,57 @@
 import { useState, useEffect } from "react";
-import AvatorImg from "../../public/avatarImg.png";
+import AvatarImg from "/avatarImg.png";
 
 const HelloMe = () => {
-  const [showText, setShowText] = useState(false);
+  const [isScaled, setIsScaled] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setShowText(true);
-          setTimeout(() => {
-            setShowText(false);
-          }, 3000);
+          setIsScaled(true);
         } else {
-          setShowText(false);
+          setIsScaled(false);
         }
       },
       { rootMargin: "0px 0px -40% 0px" }
     );
-    observer.observe(document.querySelector(".hello-me"));
-    return () => observer.disconnect();
+
+    const element = document.querySelector(".hello-me");
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
   }, []);
 
   const handleMouseEnter = () => {
-    setShowText(true);
-    setTimeout(() => {
-      setShowText(false);
-    }, 3000);
+    setIsScaled(true);
   };
+
+  const handleMouseLeave = () => {
+    setIsScaled(false);
+  };
+
   return (
     <div
-      className="hello-me relative flex h-full overflow-hidden rounded-2xl justify-center items-center"
-      onClick={handleMouseEnter}
+      className="hello-me relative flex h-80 md:h-60 lg:h-100 w-auto overflow-visible justify-center items-center bg-gradient-to-t from-gray-200 to-gray-300 rounded-full"
       onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <img
-        src={AvatorImg}
-        className="rounded-full h-80 md:h-60 lg:h-80 w-auto cursor-pointer overflow-visible  bg-gradient-to-t from-gray-100 to-gray-200 transition-transform duration-700 ease-in-out"
-        alt=""
+        src={AvatarImg}
+        className={`rounded-full h-80 md:h-60 lg:h-100 w-auto cursor-pointer object-cover transition-transform duration-500 ease-in-out overflow-visible ${
+          isScaled ? "scale-110" : ""
+        }`}
+        alt="avatar"
       />
-      {showText && (
-        <span className="absolute  left-18 sm:left-36 lg:left-18 top-[20%] sm:top-[30%] md:top[0%] lg:top-[25%]  -translate-x-1/2 transform rounded-lg bg-black px-3 py-1 text-xl text-white transition-opacity duration-600 ">
-          Hello there !
+      {isScaled && (
+        <span className="absolute left-1/6 top-0 transform -translate-x-1/2 rounded-lg bg-black px-3 py-1 text-xl text-white transition-opacity duration-600">
+          Hello there!
         </span>
       )}
     </div>

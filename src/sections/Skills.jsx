@@ -64,7 +64,7 @@ const Skills = () => {
         {/* HelloMe */}
 
         {/* My ToolBox */}
-        <div className="rounded-2xl bg-gray-100 p-4">
+        <div className="rounded-2xl  p-4">
           <h4 className="text-left text-5xl font-extrabold lg:text-7xl">
             My ToolBox
           </h4>
@@ -92,13 +92,13 @@ const Skills = () => {
             ))}
           </div>
         </div>
-        <div className="rounded-2xl bg-gray-100 p-4">
+        <div className="flex justify-center items-center p-4">
           <HelloMe />
         </div>
       </div>
       <div className="grid gap-6 pt-5 md:grid-cols-2">
         {/* Left: SkillsCat */}
-        <div className="rounded-2xl bg-gray-100 p-4">
+        <div className="flex justify-center items-center">
           <SkillsCat />
         </div>
 

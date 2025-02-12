@@ -25,7 +25,7 @@ const Header = ({ active }) => {
   };
 
   return (
-    <header className="w-full bg-[#f3f3f1] border-b border-gray-600 px-4 sm:mx-auto sm:max-w-[85rem]">
+    <header className="w-full bg-white border-b border-gray-600 px-4 sm:mx-auto sm:max-w-[85rem]">
       {/* Main header section */}
       <div className="flex items-center justify-between py-3">
         <div className="flex items-center gap-3 md:gap-5">

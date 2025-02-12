@@ -1,8 +1,43 @@
 import { LuDot } from "react-icons/lu";
 import ArrowDownShort from "../ui/ArrowDownShort";
-import AvatarImg from "../../public/avatarImg2.png";
+import AvatarImg from "/avatarImg2.png";
+import { useState, useEffect } from "react";
 
 const Introduction = () => {
+  const [isScaled, setIsScaled] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsScaled(true);
+        } else {
+          setIsScaled(false);
+        }
+      },
+      { rootMargin: "0px 0px -40% 0px" }
+    );
+
+    const element = document.querySelector(".hello-me");
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    setIsScaled(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsScaled(false);
+  };
+
   return (
     <div className="ml-1 border-b border-gray-600 py-3 sm:mx-auto sm:max-w-[85rem] md:gap-3 md:pb-8">
       <div className="flex items-center justify-between gap-2 pb-5 md:gap-3">
@@ -33,9 +68,15 @@ const Introduction = () => {
             algorithmic thinking.
           </p>
 
-          <div className="mt-10 flex h-40 w-60 shrink-0 items-center justify-center overflow-visible rounded-3xl bg-gradient-to-t  from-gray-200 to-gray-300  transition-transform duration-700 ease-in-out md:mt-0 md:h-60 md:w-60 md:rounded-full">
+          <div
+            className="mt-10 flex h-40 w-60 shrink-0 items-center justify-center overflow-visible rounded-3xl bg-gradient-to-t  from-gray-200 to-gray-300  transition-transform duration-700 ease-in-out md:mt-0 md:h-60 md:w-60 md:rounded-full "
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <img
-              className="h-auto w-full cursor-zoom-in object-cover transition-transform duration-300 hover:scale-110 overflow-visible"
+              className={`h-auto w-full  object-cover ease-in-out transition-transform duration-500 hover:scale-110 overflow-visible cursor-pointer ${
+                isScaled ? "scale-110" : ""
+              }`}
               src={AvatarImg}
               alt="avatar"
             />
